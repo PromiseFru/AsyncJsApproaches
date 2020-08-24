@@ -20,9 +20,7 @@ try {
 var myTest = async function(err, posts){
     if(err){
         console.log(err);
-        return err;
     }else{
         console.log(posts);
-        return posts;
     }
 }
