@@ -1,8 +1,11 @@
+var getPost = require('./ajax');
 const http = require('http');
 const port = 3000;
+var url = "https://jsonplaceholder.typicode.com/posts";
 
 const requestListener = function(req, res) {
-    res.writeHead(200);
+    res.writeHead(200); 
+    getPost(url, myTest);
     res.end();
 }
 
@@ -12,4 +15,14 @@ try {
     console.log(`Server started on port ${port}`);
 }catch(err){
     console.log(Error(err));
+}
+
+var myTest = async function(err, posts){
+    if(err){
+        console.log(err);
+        return err;
+    }else{
+        console.log(posts);
+        return posts;
+    }
 }
