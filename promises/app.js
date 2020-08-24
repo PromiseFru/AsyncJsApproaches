@@ -6,7 +6,7 @@ var url = "https://jsonplaceholder.typicode.com/posts";
 // request listener
 function requestListener(req, res){
     res.writeHead(200);
-    getPosts(url);
+    getPosts(url).then(myTest);
     res.end("hello world");
 }
 
